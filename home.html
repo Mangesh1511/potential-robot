@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+    <title>pccoe.com</title>
+</head>
+
+<body>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;500&display=swap');
+
+        body {
+            padding: 2vw;
+            font-family: 'Roboto Mono', monospace;
+            box-sizing: border-box;
+            grid-template-rows: 500px 100px;
+            /* background-color: rgb(184, 165, 238); */
+            grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+            /* background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,242,166,1) 0%, rgba(0,212,255,1) 100%); */
+        }
+
+        /* apply this to the container you want to animate */
+
+        body {
+            background: linear-gradient(-45deg, #ffeb3b, #74efff, #9c27b0);
+            background-size: 400% 400%;
+            animation: gradient-bg 20s ease infinite;
+        }
+
+        @keyframes gradient-bg {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .header {
+            padding: 0.5vw;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            /* background-color:#A4D0A4; */
+            border: 1px solid black;
+            text-align: center;
+            padding: 1vw;
+
+            color: white;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .content>a {
+            text-decoration: none;
+        }
+
+        .main-content {
+            text-align: center;
+            align-items: center;
+            width: 80%;
+        }
+
+        .main-content>p {
+            margin: 0%;
+            /* margin:1rem; */
+            font-size: 1.8vw;
+            font-weight: 400;
+        }
+
+        .logo-img-l {
+            padding-left: 4vw;
+        }
+
+        .logo-img-r {
+            padding-right: 4vw;
+        }
+
+        .logo-img-l>img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+
+        .logo-img-r>img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+
+        .typo>p {
+            font-weight: 500;
+
+        }
+
+        .typo {
+            text-align: center;
+            /* justify-content: center; */
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            /* margin-top:1rem; */
+            /* padding-top: 1rem; */
+            max-width: 100%;
+            max-height: 400px;
+            position: relative;
+            margin: auto;
+            margin-bottom: 7rem;
+            box-shadow: 0 8px 16px 0 rgba(210, 208, 208, 0.2);
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        img {
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+
+        .txt-rotate {
+            height: 1rem;
+            color: black;
+            text-align: center;
+        }
+
+        /*          _____SOCIAL MEDIA ICONS_____      */
+
+
+        .social-icons {
+
+            /* width: 50px; */
+            margin-top: 2rem;
+            padding-left: 0.2rem;
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .social-icons img {
+            display: block;
+            width: 20px;
+            margin: 0 auto 20px;
+            cursor: pointer;
+        }
+
+        .footer {
+            display: flex;
+            /* max-height: 400px; */
+            margin-top: 2.5rem;
+            /* background-color: rgb(196, 210, 223); */
+
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        p,
+        hr {
+            margin-left: 1rem;
+        }
+
+        .location {
+            text-align: center;
+        }
+
+        .location iframe {
+            width: 120px;
+            height: 100px;
+        }
+
+
+
+        .about-us-info {
+            margin: 2rem 2rem;
+            text-align: center;
+        }
+
+        .about-us-info>p {
+            margin: 1rem;
+            padding: 1rem;
+
+        }
+
+        .about-us-info>hr {
+            margin: auto 2rem;
+        }
+
+        .about-us-info>a {
+            text-decoration: none;
+            border: #3050ee 2px solid;
+            padding: 0.3rem;
+            /* background-color: rgb(111, 231, 119); */
+            text-align: center;
+            color: #3050ee;
+        }
+
+        .director-message {
+            text-align: center;
+            border: 1px solid black;
+            margin: 2rem;
+        }
+
+        .director-message>p {
+            margin: 1rem;
+            padding: 1rem;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .director-message>hr {
+            margin: 0rem 12vw;
+        }
+
+        .director-message>img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        .college-stats {
+
+
+            display: flex;
+            margin: 1rem 1rem;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            align-items: center;
+            justify-content: space-between;
+            height: 100px;
+            color: rgb(0, 0, 0);
+            flex-direction: row;
+        }
+
+        .students,
+        .faculty,
+        .staff {
+            padding: 2rem;
+            text-align: center;
+            width: 25%;
+        }
+
+        @charset "UTF-8";
+
+        .wrapper {
+            /* width: 400px; */
+            width: 40%;
+            /* height: 400px; */
+            display: table;
+            border: 5px solid #111;
+            /* margin: 50px auto; */
+            margin: 2rem 2rem;
+            padding: 20px;
+            position: relative;
+        }
+
+        .wrapper:after,
+        .wrapper:before {
+            content: "";
+            position: absolute;
+            font-family: fontAwesome;
+            font-size: 50px;
+            color: #111;
+            background: #fff;
+        }
+
+        .wrapper:after {
+            content: "";
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .wrapper:before {
+            content: "";
+            bottom: 0;
+            right: 0;
+            transform: translate(50%, 50%);
+            box-shadow: -10px -10px 0 #fff;
+        }
+
+
+
+        .border-radius {
+            border-radius: 30px;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .testimonials {
+            text-align: center;
+            margin: 0rem 4rem;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .testimonials>hr {
+            margin: 0rem 4rem;
+        }
+
+        .wrapper>img {
+            height: 100px;
+            margin-top: 5rem;
+            background-position: center;
+            width: 100px;
+            object-fit: cover;
+        }
+
+        .description>p {
+            font-size: small;
+            line-height: normal;
+        }
+
+        .mous {
+            margin: 1rem 0rem 0rem 4rem;
+            /* border: 1px solid black; */
+        }
+
+
+        .stats-img {
+            /* justify-content: center; */
+            /* align-items: center; */
+            text-align: center;
+        }
+
+        .stats-img>img {
+            margin: 2rem;
+            /* margin-left: 6rem; */
+            /* width: 80%; */
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        table {
+            border: 1px solid black;
+            margin-left: 2.5rem;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            /* border: 1px solid rgb(190, 190, 190); */
+            background-color: rgb(196, 210, 223);
+            padding: 10px;
+        }
+
+        th[scope='row'] {
+            background-color: #555bad;
+        }
+
+        .reach {
+            margin-left: 2rem;
+        }
+
+        .contact-us {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            margin: 2rem 0rem 2rem 8rem;
+        }
+
+        .location,
+        .phone,
+        .email {
+            width: 30%;
+        }
+
+        .location>img {
+            /* width: 100%; */
+            height: fit-content;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .contact-us1 {
+            /* background: rgb(196, 210, 223); */
+
+            border-top: 10px solid #f45702;
+            border: 2px solid;
+            margin: 1rem 2rem;
+            padding: 1rem 2rem;
+        }
+
+        label,
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+
+
+        h3 {
+            font-weight: normal;
+            font-size: 10pt;
+            line-height: 24pt;
+            font-style: italic;
+            margin: 0 0 0.5em 0;
+        }
+
+        span {
+            font-size: 8px;
+        }
+
+        em {
+            color: #f45702;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            /* border: none; */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            /* background: rgb(196, 210, 223); */
+            padding-left: 5px;
+            outline: none;
+        }
+
+        input,
+        textarea {
+            margin-bottom: 24px;
+            border: 1px solid black;
+            border-radius: 15px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 1px solid #6bd4b1;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            display: block;
+            float: right;
+            line-height: 24pt;
+            padding: 0 20px;
+            border: none;
+            background: #f45702;
+            color: white;
+            letter-spacing: 2px;
+            transition: 0.2s all ease-in-out;
+            border-bottom: 2px solid transparent;
+            outline: none;
+        }
+
+        button:hover {
+            background: inherit;
+            color: #f45702;
+            border-bottom: 2px solid #f45702;
+        }
+
+        ::selection {
+            background: #ffc7b8;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            border: 1px solid #6bd4b1;
+            -webkit-text-fill-color: #2A293E;
+            -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        .txt-rotate,
+        .wrap {
+            font-size: large;
+        }
+
+        .department {
+            margin: 2rem 0rem 2rem 4rem;
+        }
+
+        .research>.sub-headings {
+            margin: 1rem;
+
+
+        }
+
+        .placements {
+            margin: 1rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+
+        }
+
+        .courses {
+            margin: 2rem;
+        }
+    </style>
+    <div class="header">
+        <div class="logo-img-l"><img src="http://www.pccoepune.com/images/pccoe-logo-new.webp"></div>
+        <div class="main-content">
+            <p>
+                <bold> PIMPRI CHINCHWAD COLLEGE OF ENGINEERING</bold>
+            </p>
+        </div>
+        <div class="logo-img-r"><img src="./assets/tagline.webp"></div>
+    </div>
+    <div class="navbar">
+
+        <div class="content">
+            <div class="pages"><a href="#">Home</a></div>
+            <div class="pages"><a href="#about">About Us</a></div>
+            <div class="pages"><a href="contact.html">Contact Us</a></div>
+            <div class="pages"><a href="#faculty">Faculty</a></div>
+            <div class="pages"><a href="#department">Department</a></div>
+            <div class="pages"><a href="#placement">Placement</a></div>
+        </div>
+    </div>
+    <!-- Typewriter effect -->
+    <div class="typo">
+        <p>@PCCOE :
+            <span class="txt-rotate" data-period="20"
+                data-rotate='[ "NIRF Top 200 Continuously  Since Last 4 years .","Best Private Engineering College By ISTE .", "NAAC Accredited with A Grade.", " 200+ Patents Rights.", "NBA accredited.", "1500 Research Papers Published." ]'></span>
+        </p>
+    </div>
+
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <img src="./assets/carousel-1.jpeg" style="width:100%">
+            <div class="text">PCCOE CAMPUS</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="./assets/carousel-2.jpg" style="width:100%">
+            <div class="text">VEHICLE BY OUR TEAM KRATOS</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="./assets/carousel-7.jpg" style="width:100%">
+            <div class="text"> DRONE SHOT OF PCCOE</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="./assets/carousel-5.jpg" style="width:100%">
+            <div class="text"> LAWN AND FOOTBALL GROUND </div>
+        </div>
+        <div class="mySlides fade">
+            <img src="./assets/carousel-6.jpeg" style="width:100%">
+            <div class="text">CRICKET GROUND</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <p><strong>About us</strong></p>
+    <hr>
+    <div class="about-us-info" id="about">
+
+        <p>Pimpri Chinchwad Education Trust (PCET) was established in 1990 by visionary Late. Shri. Shankarrao B. Patil,
+            Late. Smt. Lilatai Shankarrao Patil, Shri. Dnyaneswar P. Landage, Shri. Vitthal S. Kalbhor, Shri. Shantaram
+            D. Garade, Late. Shri. Bhaijan Kazi with an idea of providing quality education from K.G. to P.G. Its sole
+            mission was aimed at serving society, the industry and all stakeholders through value-inculcating, quality
+            education in the area of schooling, as well as professional tutelage in the fields of engineering,
+            management and computer applications.
+
+            PCET has always been committed to its mission by creating, communicating, preserving and applying knowledge,
+            art and academic values.
+
+            At the campus at Akurdi, Pune, near 7,200 students are being groomed in specialised courses like
+            Engineering, MBA, MCA & PGDM by professional and passionate instructors. The campuses at Ravet are school to
+            1,200 would-be graduates at the College of Engineering, around 800 pupils at the Junior College, and
+            approximately 2,500 students at the Public School, all amounting to a total of 11,700-odd students.
+        </p>
+
+    </div>
+
+    <p><strong>Departments</strong></p>
+    <hr>
+    <div class="department">
+        <ul>
+            <li>Computer Engineering</li>
+            <li>Mechanical Engineering</li>
+            <li>IT Engineering</li>
+            <li>Electronics and Telecommunications Engineering</li>
+            <li>Civil Engineering</li>
+        </ul>
+    </div>
+
+    <p><strong>Faculty</strong></p>
+    <hr>
+    <div class="college-stats">
+        <div class="students">
+            400+
+            <hr class="center-ball">
+            Teachers
+        </div>
+        <div class="faculty">
+            35+
+            <hr class="center-ball">
+            Phd Holders
+        </div>
+        <div class="staff">
+            14+
+            <hr class="center-ball">
+            Proffesors
+        </div>
+        <div class="staff">
+            24+
+            <hr class="center-ball">
+            Ass.Proffesors
+        </div>
+
+    </div>
+    <div class="director-message">
+        <p><strong>DIRECTOR'S CORNER</strong></p>
+
+        <img src="./assets/director-PCCoE.jpg">
+        <p><strong>Dr.Govind N. Kulkarni<br>Director</strong></p>
+        <hr>
+        <p>PCCoE leverages the strengths that it has developed over the past decades, build upon them and acquire
+            new
+            strengths and would like to emerge as a prominent hub in technical education and research thereby
+            contributing to the social and global initiatives.
+        </p>
+    </div>
+    </div>
+    <p><strong>Research</strong></p>
+    <hr>
+    <div class="research">
+        <p class="sub-headings"><strong>Publication Stats</strong></p>
+        <div class="table">
+            <table>
+                <tbody>
+                    <tr>
+                        <th width="173" valign="top">
+                            <p>
+                                <strong>Publication</strong>
+                            </p>
+                        </th>
+                        <th width="114">
+                            <p>
+                                <strong>IT</strong>
+                            </p>
+                        </th>
+                        <th width="114">
+                            <p>
+                                <strong>Civil</strong>
+                            </p>
+                        </th>
+                        <th width="114">
+                            <p>
+                                <strong>Comp</strong>
+                            </p>
+                        </th>
+                        <th width="114">
+                            <p>
+                                <strong>E&amp;TC</strong>
+                            </p>
+                        </th>
+                        <th width="131">
+                            <p>
+                                <strong>Mech</strong>
+                            </p>
+                        </th>
+                        <th width="114">
+                            <p>
+                                <strong>MCA</strong>
+                            </p>
+                        </th>
+                        <th width="114">
+                            <p>
+                                <strong>AS&amp;H</strong>
+                            </p>
+                        </th>
+                        <th width="114">
+                            <p>
+                                Total
+                            </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td width="173" valign="top">
+                            <p>
+                                International Journal
+                        </td>
+                        <td width="114">
+                            <p>
+                                59
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                29
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                270
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                86
+                            </p>
+                        </td>
+                        <td width="131">
+                            <p>
+                                47
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                12
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                67
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                491
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="173">
+                            <p>
+                                International Conferencex
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                36
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>14</p>
+
+                        </td>
+                        <td width="114">
+                            <p>
+                                135
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                46
+                            </p>
+                        </td>
+                        <td width="131">
+                            <p>
+                                29
+
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                nil
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                nil
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                260
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="173">
+                            <p>
+                                Book Chapters
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                20
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                nil
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                19
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                11
+                            </p>
+                        </td>
+                        <td width="131">
+                            <p>
+                                11
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                0
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                nil
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                61
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="173" valign="top">
+                            <p>
+                                Total No. of Publications per department
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                115
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                43
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                424
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                143
+                            </p>
+                        </td>
+                        <td width="131">
+                            <p>
+                                87
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                12
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                67
+                            </p>
+                        </td>
+                        <td width="114">
+                            <p>
+                                891
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>.
+        <div class="stats-img">
+            <img src="./assets/research.jpg">
+        </div>
+
+    </div>
+    <p><strong>Placements</strong></p>
+    <hr>
+    <div class="placements" id="placement">
+        <p>We, at PCCoE try to connect with as many companies as possible for placement of students. We enjoy the
+            advantage of getting cream layer of students at our institutes. Our Alumni are also performing well in
+            the industries where they are placed. Hence we could get the recognition from industries. We believe
+            that the backbone of our T&P Cell is our student volunteers of T&P Cell who work very hard with full
+            enthusiasm to conduct the recruitment drives smoothly. All these volunteers develop their management
+            skills, interpersonal skills and above all Leadership skills. All such student volunteers become
+            Managers/ Project leaders earlier in their career as compared to their other counterparts because of
+            these skills. We would like to assure Industry, Students and Parents that we will not leave any stone
+            unturned to make all our stakeholders Happy and Proud.</p>
+
+        <div class="courses">
+            <p>
+                <bold>List Of Training Courses Given:</bold>
+            </p>
+            <ul>
+
+
+                <li class="listformat" style="color:#0933ef">Communication Skills Training to SE Students.</li>
+
+                <li class="listformat" style="color:#0933ef">Aptitude Training to Third Year Students.</li>
+
+                <li class="listformat" style="color:#0933ef">Interview Preparation Session for Final Year Students by
+                    TCS.</li>
+
+                <li class="listformat" style="color:#0933ef">Mock GD / PI Sessions for Final Year Students.</li>
+
+                <li class="listformat" style="color:#0933ef">Mock Aptitude Tests (Written and Online) For Final Year
+                    Students.</li>
+
+            </ul>
+        </div>
+
+
+        <div class="mous">
+            <p>MoUs</p>
+
+            <ul>
+                <li class="listformat">Microsoft IT Academy</li>
+                <li class="listformat">Marsh Consultancy</li>
+                <li class="listformat">Baker Gauges India Pvt. Ltd </li>
+                <li class="listformat">Texas Instruments, MASSTRANS, B&amp;R Automation India</li>
+                <li class="listformat">TIFAC (Technology Information, Forecasting and Assessment Council) </li>
+                <li class="listformat">Central Institute of Plastic Engineering &amp; Technology, Aurangabad</li>
+            </ul>
+        </div>
+
+
+
+    </div>
+    <p><strong>Testimonials</strong></p>
+    <hr>
+    <div class="testimonials">
+
+
+        <div class="wrapper border-radius">
+            <!-- <div class="title">Work <small>Hard</small> Play <small>Hard</small></div> -->
+            <img src="./assets/image-avatar.png">
+            <div class="name">Om Bidve<br>Computer Engineering,2024 Batch</br></div>
+            <div class="description">
+                <p>The first year of my college went online but the efforts the teachers have put in teaching is
+                    really a plus point. All the faculties of the college are excellent! Even we received daily
+                    emails from Dr. Shitalkumar sir regarding various sessions and internships. Most importantly
+                    the crowd at PCCOE is the best I can assure of. Thank You.
+
+                </p>
+            </div>
+        </div>
+        <div class="wrapper border-radius">
+            <!-- <div class="title">Work <small>Hard</small> Play <small>Hard</small></div> -->
+            <img src="./assets/image-avatar.png">
+            <div class="name">Viraj Dhamdhere<br>IT Engineering,2011 Batch</br></div>
+            <div class="description">
+                <p>I joined PCCOE in 2008, like most of the people at that time it was not my first choice also
+                    it was not known "Brand", I still remeber first day where infrastructure, Asthetics and
+                    everything was to the minimal. But progress is synonym for PCCOE. I have seen its growth and
+                    it's at the cost of lot of dedication, Hard work and some very right desicions. Discipline
+                    was always an important part of PCCOE and at some time it felt like a School of Engineering.
+                    But this accounted as a big reason for its success.
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <p><strong>Contact us</strong></p>
+    <hr>
+    <div class="contact">
+        <div class="reach">
+            <p>Reach Us</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7560.546565048871!2d73.75211259357907!3d18.651728800000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sPCCOE%20-%20Pimpri%20Chinchwad%20College%20Of%20Engineering%20%7C%20Autonomous%20Engineering%20College%20in%20Pune!5e0!3m2!1sen!2sus!4v1673342758968!5m2!1sen!2sus"
+                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-us">
+            <div class="location">
+                <img src="./assets/locator.png">
+                <br>
+                Pimpri Chinchwad Education Trust's
+                PCCOE
+                Sector -26, Pradhikaran, Nigdi,
+                Near Akurdi Railway Station,
+                Pune - 411 044.
+            </div>
+            <div class="phone">
+                <img src="./assets/phone.png">
+                <br>
+                Office Phone :
+                020 – 2760 0000 (Office),
+                020 - 2760 0003 (Registrar),
+                020 - 2760 0006 (OS),
+                +91 8087174347 (Mobile)
+            </div>
+            <div class="email">
+
+                <img src="./assets/email.png">
+                <br>
+                pccoeadmin@gmail.com
+            </div>
+
+        </div>
+        <div class="contact-form">
+            <div class="contact-us1">
+                <form action="#">
+                    <label for="customerName">NAME <em>&#x2a;</em></label><input id="customerName" name="customerName"
+                        required="" type="text" /><label for="customerEmail">EMAIL <em>&#x2a;</em></label><input
+                        id="customerEmail" name="customerEmail" required="" type="email" /><label
+                        for="customerPhone">PHONE</label><input id="customerPhone" name="customerPhone"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" type="tel" /><label for="customerNote">YOUR MESSAGE
+                        <em>&#x2a;</em></label><textarea id="customerNote" name="customerNote" required=""
+                        rows="4"></textarea>
+                    <h3>
+                        Please provide all the information about your issue you can.
+                    </h3>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+
+
+        <div>
+            <p class="heading_h3h"><strong>GET IN TOUCH</strong></p>
+            <p><span class="glyphicon glyphicon-map-marker"></span> Sector 26, Pradhikaran, <br> Nigdi, Pune,
+                411044
+                <br> (Near Akurdi Railway Station)
+            </p>
+            <p><span class="glyphicon glyphicon-earphone"></span> +91 - 9960984347</p>
+            <p><span class="glyphicon glyphicon-envelope"></span> <a
+                    href="mailto:pccoeadmin@gmail.com">pccoeadmin@gmail.com</a></p>
+        </div>
+        <div>
+            <p class="heading_h3h"><strong>IMPORTANT LINKS</strong></p>
+            <ul>
+                <li><a href="http://www.pccoepune.com/deandesk.php">Academics</a></li>
+                <li><a href="http://www.pccoepune.com/syllabi.php">Syllabi</a></li>
+                <li><a href="http://www.pccoepune.com/iii-home.php">Placements</a></li>
+                <li><a href="http://www.pccoepune.com/international-relations-home.php">International
+                        Relations</a></li>
+                <li><a href="http://www.pccoepune.com/admission-home.php">Admissions</a></li>
+                <li><a href="http://www.pccoepune.com/contact-us.php">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="heading_h3h"><strong>QUICK LINKS</strong></p>
+            <ul>
+                <li><a href="http://www.pccoepune.com/syllabi.php">Syllabi</a></li>
+                <li><a href="http://www.pccoepune.com/examinations.php">Examination</a></li>
+                <li><a href="http://www.pccoepune.com/awards.php">Awards</a></li>
+                <li><a href="http://www.pccoepune.com/nirf.php">NIRF</a></li>
+                <li><a href="http://pcet.org.in/" target="_blank">PCET</a></li>
+            </ul>
+        </div>
+        <div class="location">
+            <p class="heading_h3h"><strong>LOCATION</strong></p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7560.546565048871!2d73.75211259357907!3d18.651728800000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sPCCOE%20-%20Pimpri%20Chinchwad%20College%20Of%20Engineering%20%7C%20Autonomous%20Engineering%20College%20in%20Pune!5e0!3m2!1sen!2sus!4v1673342758968!5m2!1sen!2sus"
+                class="pccoe_map" width="100%" height="160px" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- <div class="clearfix"></div> -->
+
+
+
+
+    </div>
+    <div class="social-icons">
+        <img src="facebook.png" alt="">
+        <img src="instagram.png" alt="">
+        <img src="twitter.png" alt="">
+
+        <img src="yt.png" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
